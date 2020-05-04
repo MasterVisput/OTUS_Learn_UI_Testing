@@ -14,6 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
+venv
 lib/
 lib64/
 parts/
@@ -123,3 +124,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.idea/OTUS_Learn_UI_Testing.iml
