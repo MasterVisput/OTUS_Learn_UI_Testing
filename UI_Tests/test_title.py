@@ -1,7 +1,6 @@
 
-
 class TestOpencard():
 
-    def test_title(self, browser):
-        browser.get('http://localhost/')
-        assert browser.title == 'Your Store', 'Некорретное название титла'
+    def test_title(self, browser, url):
+        browser.get(url)
+        assert browser.title == 'Your Store', 'Некорретное название страницы'
