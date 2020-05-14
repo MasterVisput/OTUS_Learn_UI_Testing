@@ -18,7 +18,6 @@ def url(request):
 
 @pytest.fixture()
 def browser():
-    browser = webdriver.Chrome()
-    browser.implicitly_wait(5)
+    browser = webdriver.Firefox()
     yield browser
     browser.quit()
