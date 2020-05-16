@@ -1,8 +1,9 @@
-from selenium.webdriver import Remote as RemoteWebDriwer
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from Learning_of_the_selectors.pages.selectors import LoginAdminPageSelector, DashboardPageSelectors
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver import Remote as RemoteWebDriwer
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
+from Learning_of_the_selectors.pages.selectors import LoginAdminPageSelector, DashboardPageSelectors
 
 
 class BasePage():
@@ -21,13 +22,15 @@ class BasePage():
         else:
             return True
 
-
     def login_admin(self):
-        username_field = WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(LoginAdminPageSelector.USERNAME_FIELD))
+        username_field = WebDriverWait(self.browser, 5).until(
+            EC.visibility_of_element_located(LoginAdminPageSelector.USERNAME_FIELD))
         username_field.send_keys('user')
-        password_field = WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(LoginAdminPageSelector.PASSWOD_FIELD))
+        password_field = WebDriverWait(self.browser, 5).until(
+            EC.visibility_of_element_located(LoginAdminPageSelector.PASSWOD_FIELD))
         password_field.send_keys('bitnami1')
-        login_button = WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(LoginAdminPageSelector.LOGIN_BUTTON))
+        login_button = WebDriverWait(self.browser, 5).until(
+            EC.element_to_be_clickable(LoginAdminPageSelector.LOGIN_BUTTON))
         login_button.click()
         try:
             weit = WebDriverWait(self.browser, 5).until(EC.title_contains('Dashboard'))
@@ -35,10 +38,9 @@ class BasePage():
         except TimeoutException:
             return 'TimeoutException'
 
-
-
     def log_out(self):
-        logout_link = WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(DashboardPageSelectors.LOGOUT_LINK))
+        logout_link = WebDriverWait(self.browser, 5).until(
+            EC.element_to_be_clickable(DashboardPageSelectors.LOGOUT_LINK))
         logout_link.click()
         try:
             weit = WebDriverWait(self.browser, 5).until(EC.title_contains('Administration'))
@@ -50,13 +52,12 @@ class BasePage():
         weit = WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(DashboardPageSelectors.CATALOG_LINK))
         catalog_link = self.browser.find_elements(*DashboardPageSelectors.CATALOG_LINK)
         catalog_link[0].click()
-        product_link = WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(DashboardPageSelectors.PRODUCT_LINK))
+        product_link = WebDriverWait(self.browser, 5).until(
+            EC.element_to_be_clickable(DashboardPageSelectors.PRODUCT_LINK))
         product_link.click()
         try:
-            products_tab = WebDriverWait(self.browser, 5).until(EC.presence_of_all_elements_located(DashboardPageSelectors.PRODUCT_TAB))
+            products_tab = WebDriverWait(self.browser, 5).until(
+                EC.presence_of_all_elements_located(DashboardPageSelectors.PRODUCT_TAB))
             return products_tab
         except TimeoutException:
             return 'TimeoutException'
-
-
-
