@@ -32,6 +32,16 @@ class LoginAdminPageSelector():
     OPENCART_LINK = (By.XPATH, '//a[text()="OpenCart"]')
 
 
+class DashboardPageSelectors():
+    LOGOUT_LINK = (By.CSS_SELECTOR, '.hidden-xs')
+    CATALOG_LINK = (By.CSS_SELECTOR, '[href="#collapse1"]')
+    PRODUCT_LINK = (By.CSS_SELECTOR, '#collapse1 > li:nth-child(2)')
+    PRODUCT_TAB =  (By.CSS_SELECTOR, 'tbody tr')
+
+
+
+
+
 
 
 
