@@ -1,5 +1,5 @@
-from Learning_of_the_selectors.pages.base_page import BasePage
-from Learning_of_the_selectors.pages.selectors import LoginPageSelectors
+from Opencat_UI_testing.pages.base_page import BasePage
+from Opencat_UI_testing.pages.selectors import LoginPageSelectors
 
 
 def test_button_continue_is_presents(browser, url):

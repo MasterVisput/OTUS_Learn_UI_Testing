@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions, FirefoxOptions
+from Opencat_UI_testing.pages.product_page import ProductPage
 
 
 def pytest_addoption(parser):
@@ -39,6 +40,7 @@ def browser(browser_opt):
         options = FirefoxOptions()
         options.add_argument('--kiosk')
         browser = webdriver.Firefox(options=options)
+        profile.accept_untrusted_certs = True
     elif browser_opt == 'IE':
         browser = webdriver.Ie()
     yield browser

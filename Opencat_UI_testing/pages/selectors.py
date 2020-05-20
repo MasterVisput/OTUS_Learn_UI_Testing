@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class CatalogPageSelectors():
+class CatalogPageSelectors:
     SEARCH_FIELD = (By.CSS_SELECTOR, '#search > input')
     BASKET_BUTTON = (By.XPATH, '//*[@id="cart"]/button')
     GRID_BUTTON = (By.CSS_SELECTOR, '#grid-view')
@@ -17,14 +17,15 @@ class ProductCardSelectors():
     REVIEWS_LINK = (By.CSS_SELECTOR, '[href="#tab-review"]')
 
 
-class LoginPageSelectors():
+class LoginPageSelectors:
     BUTTON_CONTINUE = (By.XPATH, '//a[text()="Continue"]')
     BUTTON_LOGIN = (By.CSS_SELECTOR, '[value="Login"]')
     E_MAIL_FIELD = (By.CSS_SELECTOR, '[name="email"]')
     PASSWORD_FIELD = (By.CSS_SELECTOR, '[name="password"]')
     FORGOTTEN_PASSWORD_LINK = (By.CSS_SELECTOR, '.form-group a')
 
-class LoginAdminPageSelector():
+
+class LoginAdminPageSelector:
     USERNAME_FIELD = (By.CSS_SELECTOR, '[name="username"]')
     PASSWOD_FIELD = (By.CSS_SELECTOR, '[name="password"]')
     FORGOTTEN_PASSWORD = (By.XPATH, '//a[text()="Forgotten Password"]')
@@ -32,24 +33,26 @@ class LoginAdminPageSelector():
     OPENCART_LINK = (By.XPATH, '//a[text()="OpenCart"]')
 
 
-class DashboardPageSelectors():
+class DashboardPageSelectors:
     LOGOUT_LINK = (By.CSS_SELECTOR, '.hidden-xs')
     CATALOG_LINK = (By.CSS_SELECTOR, '[href="#collapse1"]')
     PRODUCT_LINK = (By.CSS_SELECTOR, '#collapse1 > li:nth-child(2)')
-    PRODUCT_TAB =  (By.CSS_SELECTOR, 'tbody tr')
+    PRODUCT_TAB = (By.CSS_SELECTOR, 'tbody tr')
+    ADD_NEW = (By.CSS_SELECTOR, '[data-original-title="Add New"]')
+    DELETE = (By.CSS_SELECTOR, '[data-original-title="Delete"]')
+    PRODUCT_NAME_FIELD = (By.CSS_SELECTOR, '#input-name')
+    FILTER_BUTTON = (By.CSS_SELECTOR, '#button-filter[type="button"]')
+    DASHBOARD_LINK = (By.CSS_SELECTOR, '#menu-dashboard')
 
 
 
+class AddNewProductCartSelectors:
+    SAVE_BUTTON = (By.CSS_SELECTOR, '[data-original-title="Save"]')
+    EDIT_BUTTON = (By.CSS_SELECTOR, '[data-original-title="Edit"]')
 
+    GENERAL_TAB = (By.CSS_SELECTOR, '[href="#tab-general"]')
+    PRODUCT_NAME = (By.CSS_SELECTOR, '#input-name1')
+    META_TAG = (By.CSS_SELECTOR, '#input-meta-title1')
 
-
-
-
-
-
-
-
-
-
-
-
+    DATA_TAB = (By.CSS_SELECTOR, '[href="#tab-data"]')
+    MODEL = (By.CSS_SELECTOR, '[name="model"]')

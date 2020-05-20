@@ -1,5 +1,5 @@
-from Learning_of_the_selectors.pages.base_page import BasePage
-from Learning_of_the_selectors.pages.selectors import ProductCardSelectors
+from Opencat_UI_testing.pages.base_page import BasePage
+from Opencat_UI_testing.pages.selectors import ProductCardSelectors
 
 
 def test_button_add_to_wl_is_presents(browser, url):

@@ -3,7 +3,7 @@ from selenium.webdriver import Remote as RemoteWebDriwer
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from Learning_of_the_selectors.pages.selectors import LoginAdminPageSelector, DashboardPageSelectors
+from Opencat_UI_testing.pages.selectors import LoginAdminPageSelector, DashboardPageSelectors, AddNewProductCartSelectors
 
 
 class BasePage():
@@ -61,3 +61,6 @@ class BasePage():
             return products_tab
         except TimeoutException:
             return 'TimeoutException'
+
+
+
